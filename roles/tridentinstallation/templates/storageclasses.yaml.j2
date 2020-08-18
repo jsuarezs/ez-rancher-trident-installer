@@ -1,0 +1,35 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: solidfire-bronze
+parameters:
+  IOPS: '4000'
+  backendType: solidfire-san
+  storagePools: solidfire:Bronze
+provisioner: netapp.io/trident
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: solidfire-silver
+parameters:
+  IOPS: '25000'
+  backendType: solidfire-san
+  storagePools: solidfire:Silver
+provisioner: netapp.io/trident
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: solidfire-gold
+parameters:
+  IOPS: '180000'
+  backendType: solidfire-san
+  storagePools: solidfire:Gold
+provisioner: netapp.io/trident
+reclaimPolicy: Delete
+volumeBindingMode: Immediate

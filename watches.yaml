@@ -1,0 +1,5 @@
+---
+- version: v1alpha1
+  group: tridentinstall.czan.io
+  kind: TridentInstallation
+  role: tridentinstallation

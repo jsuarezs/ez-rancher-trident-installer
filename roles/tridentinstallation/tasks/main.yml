@@ -1,0 +1,13 @@
+---
+- name: Deploy CRDs
+  k8s:
+    definition: "{{ lookup('file', '/trident-installer/deploy/crds/trident.netapp.io_tridentprovisioners_crd_post1.16.yaml') }}"
+  register: k8s_ns_result
+
+- name: Deploy Stack
+  k8s:
+    definition: "{{ lookup('file', '/trident-installer/deploy/bundle.yaml') }}"
+
+- name: Deploy Provisioner
+  k8s:
+    definition: "{{ lookup('file', '/trident-installer/deploy/crds/tridentprovisioner_cr.yaml') }}"

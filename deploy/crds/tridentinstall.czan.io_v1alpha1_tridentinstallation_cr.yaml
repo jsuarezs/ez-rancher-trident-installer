@@ -1,0 +1,13 @@
+apiVersion: tridentinstall.czan.io/v1alpha1
+kind: TridentInstallation
+metadata:
+  name: example-tridentinstallation
+spec:
+  trident_username: solidfire
+  trident_password: solidfire
+  tenant_name: k8s_trident
+  SVIP: 10.0.0.1
+  MVIP: 10.0.0.2
+  backend_name: solidfire
+  storage_driver_name: solidfire-san
+  use_chap: true

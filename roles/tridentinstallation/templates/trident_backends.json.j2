@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "storageDriverName": '{{ storage_driver_name }}',
+  "Endpoint": "https://'{{ trident_username }}':'{{ trident_password }}'@'{{ MVIP }}'/json-rpc/8.0",
+  "SVIP": "'{{ SVIP }}':3260",
+  "TenantName": '{{ tenant_name }}',
+  "backendName": '{{ backend_name }}',
+  "InitiatorIFace": "default",
+  "UseCHAP": '{{ use_chap }}',
+  "Types": [
+      {
+          "Type": "Bronze",
+          "Qos": {
+              "minIOPS": 1000,
+              "maxIOPS": 4000,
+              "burstIOPS": 6000
+          }
+      },
+      {
+          "Type": "Silver",
+          "Qos": {
+              "minIOPS": 5000,
+              "maxIOPS": 25000,
+              "burstIOPS": 40000
+          }
+      },
+      {
+          "Type": "Gold",
+          "Qos": {
+              "minIOPS": 15000,
+              "maxIOPS": 180000,
+              "burstIOPS": 200000
+          }
+      }
+  ]
+}
