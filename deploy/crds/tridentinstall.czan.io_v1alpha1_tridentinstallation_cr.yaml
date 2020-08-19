@@ -3,6 +3,7 @@ kind: TridentInstallation
 metadata:
   name: example-tridentinstallation
 spec:
+  credentials_secret: mysecret
   trident_username: solidfire
   trident_password: solidfire
   tenant_name: k8s_trident

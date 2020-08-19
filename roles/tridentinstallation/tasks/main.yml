@@ -2,7 +2,7 @@
 - name: Deploy CRDs
   k8s:
     definition: "{{ lookup('file', '/trident-installer/deploy/crds/trident.netapp.io_tridentprovisioners_crd_post1.16.yaml') }}"
-  register: k8s_ns_result
+  register: k8s_crd_result
 
 - name: Deploy Stack
   k8s:
@@ -11,3 +11,17 @@
 - name: Deploy Provisioner
   k8s:
     definition: "{{ lookup('file', '/trident-installer/deploy/crds/tridentprovisioner_cr.yaml') }}"
+
+- name: Create Backend File
+  template:
+    src: "{{ lookup('template', 'trident_backends.json.j2') }}"
+    dest: /trident-backends.json
+
+- name: Create backends
+  raw: "/trident-installer/tridentctl -n {{ namespace }} create backend -f /etc/kubernetes/backend.json"
+  register: create_backends_result
+
+- name: Create StorageClasses
+  k8s:
+    definition: "{{ lookup('template', 'storageclasses.yaml.j2') }}"
+  register: k8s_storageclass_result
