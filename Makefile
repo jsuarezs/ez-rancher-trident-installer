@@ -12,7 +12,6 @@ push:
 .PHONY: deploy
 deploy:
 	kubectl apply -f deploy/crds/tridentinstall.czan.io_tridentinstallations_crd.yaml
-	kubectl apply -f deploy/crds/tridentinstall.czan.io_v1alpha1_tridentinstallation_cr.yaml
 	kubectl apply -f deploy/operator.yaml
 	kubectl apply -f deploy/role.yaml
 	kubectl apply -f deploy/role_binding.yaml
