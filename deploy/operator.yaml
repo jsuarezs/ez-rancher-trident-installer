@@ -17,7 +17,7 @@ spec:
       containers:
         - name: trident-installer
           # Replace this with the built image name
-          image: sgryczan/trident-installer:0.0.0
+          image: sgryczan/trident-installer:0.0.1
           imagePullPolicy: "Always"
           volumeMounts:
           - mountPath: /tmp/ansible-operator/runner

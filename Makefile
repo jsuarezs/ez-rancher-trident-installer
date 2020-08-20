@@ -1,9 +1,9 @@
-VERSION=0.0.0
+VERSION=0.0.1
 IMAGE_NAME=sgryczan/trident-installer
 
 .PHONY: build
 build:
-	operator-sdk build $(IMAGE_NAME):$(VERSION)
+	docker build -t $(IMAGE_NAME):$(VERSION) -f build/Dockerfile .
 
 .PHONY: push
 push:

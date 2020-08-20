@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "storageDriverName": '{{ storage_driver_name }}',
-  "Endpoint": "https://'{{ trident_username }}':'{{ trident_password }}'@'{{ MVIP }}'/json-rpc/8.0",
-  "SVIP": "'{{ SVIP }}':3260",
-  "TenantName": '{{ tenant_name }}',
-  "backendName": '{{ backend_name }}',
+  "storageDriverName": {{ storage_driver_name }},
+  "Endpoint": "https://{{ trident_username }}:{{ trident_password }}@{{ mvip }}/json-rpc/8.0",
+  "SVIP": "{{ svip }}:3260",
+  "TenantName": {{ tenant_name }},
+  "backendName": {{ backend_name }},
   "InitiatorIFace": "default",
-  "UseCHAP": '{{ use_chap }}',
+  "UseCHAP": {{ use_chap }},
   "Types": [
       {
           "Type": "Bronze",

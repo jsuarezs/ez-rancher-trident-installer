@@ -12,13 +12,27 @@
   k8s:
     definition: "{{ lookup('file', '/trident-installer/deploy/crds/tridentprovisioner_cr.yaml') }}"
 
+- name: Wait for trident-operator ready
+  shell: kubectl wait deployment/trident-operator --for condition=available -n trident
+
+#- name: Wait for CSI pods
+#  shell: kubectl get pods --no-headers -l app=node.csi.trident.netapp.io -n trident | grep -v Running
+#  retries: 3
+#  delay: 5
+#  register: csi_ds_result
+#  until: csi_ds_result.stdout_lines | length == 0
+
+#- debug:
+#    var: csi_ds_result
+
 - name: Create Backend File
   template:
-    src: "{{ lookup('template', 'trident_backends.json.j2') }}"
-    dest: /trident-backends.json
+    #src: "{{ lookup('template', 'trident_backends.json.j2') | to_nice_json }}"
+    src: trident_backends.json.j2
+    dest: /tmp/trident-backends.json
 
 - name: Create backends
-  raw: "/trident-installer/tridentctl -n {{ namespace }} create backend -f /etc/kubernetes/backend.json"
+  shell: "tridentctl -n {{ meta.namespace }} create backend -f /tmp/trident-backends.json"
   register: create_backends_result
 
 - name: Create StorageClasses
