@@ -96,3 +96,46 @@ spec:
   use_chap: true
 
 ```
+
+## Testing Your Installation
+1. Create a PVC:
+```
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pv-claim
+spec:
+  storageClassName: solidfire-silver
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+```
+
+2. Create a pod that mounts the PVC as a volume
+```
+kind: Pod                  
+metadata:
+  name: task-pv-pod  
+spec:
+  volumes:                   
+    - name: task-pv-storage
+      persistentVolumeClaim:
+        claimName: task-pv-claim
+  containers:
+    - name: task-pv-container      
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: task-pv-storage
+```
+
+3. Verify your pod can run:
+```
+$ kubectl get pods
+NAME          READY   STATUS    RESTARTS   AGE
+task-pv-pod   1/1     Running   0          18m
+```
