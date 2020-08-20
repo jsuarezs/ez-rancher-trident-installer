@@ -1,8 +1,17 @@
 ---
+- name: Check for Existing Trident Deployments
+  shell: "kubectl get deployment trident-operator -n {{ meta.namespace }} --no-headers=1"
+  register: check_trident_ds
+  failed_when: "'6443' in check_trident_ds.stderr_lines"
+
+- debug: 
+    var: check_trident_ds.stdout_lines
+
 - name: Deploy CRDs
   k8s:
     definition: "{{ lookup('file', '/trident-installer/deploy/crds/trident.netapp.io_tridentprovisioners_crd_post1.16.yaml') }}"
   register: k8s_crd_result
+  when: check_trident_ds.stdout_lines | length == 0
 
 - name: Deploy Stack
   k8s:
@@ -15,19 +24,18 @@
 - name: Wait for trident-operator ready
   shell: kubectl wait deployment/trident-operator --for condition=available -n trident
 
-#- name: Wait for CSI pods
-#  shell: kubectl get pods --no-headers -l app=node.csi.trident.netapp.io -n trident | grep -v Running
-#  retries: 3
-#  delay: 5
-#  register: csi_ds_result
-#  until: csi_ds_result.stdout_lines | length == 0
-
-#- debug:
-#    var: csi_ds_result
+- name: Wait for CSI pods
+  shell: kubectl get pods --no-headers -l app=node.csi.trident.netapp.io -n trident --field-selector=status.phase=Running
+  register: csi_ds_result
+  until: csi_ds_result.stdout.find("trident") != -1
+  retries: 3
+  delay: 5
+  
+- debug:
+    var: csi_ds_result
 
 - name: Create Backend File
   template:
-    #src: "{{ lookup('template', 'trident_backends.json.j2') | to_nice_json }}"
     src: trident_backends.json.j2
     dest: /tmp/trident-backends.json
 
