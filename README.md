@@ -100,6 +100,7 @@ spec:
 ## Testing Your Installation
 1. Create a PVC:
 ```
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: task-pv-claim
@@ -114,6 +115,7 @@ spec:
 
 2. Create a pod that mounts the PVC as a volume
 ```
+apiVersion: v1
 kind: Pod                  
 metadata:
   name: task-pv-pod  
