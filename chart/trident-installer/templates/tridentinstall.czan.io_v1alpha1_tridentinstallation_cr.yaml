@@ -1,0 +1,13 @@
+apiVersion: tridentinstall.czan.io/v1alpha1
+kind: TridentInstallation
+metadata:
+  name: {{ include "trident-installer.fullname" . }}
+spec:
+  trident_username: {{ .Values.trident_username }}
+  trident_password: {{ .Values.trident_password }}
+  tenant_name: {{ .Values.tenant_name }}
+  svip: {{ .Values.svip }}
+  mvip: {{ .Values.mvip }}
+  backend_name: {{ .Values.backend_name }}
+  storage_driver_name: {{ .Values.storage_driver_name }}
+  use_chap: {{ .Values.use_chap }}

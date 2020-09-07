@@ -1,0 +1,12 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: trident-installer
+subjects:
+- kind: ServiceAccount
+  name: trident-installer
+  namespace: trident
+roleRef:
+  kind: ClusterRole
+  name: trident-installer
+  apiGroup: rbac.authorization.k8s.io
