@@ -1,6 +1,6 @@
 ## Add the Repository:
 ```
-$ helm repo add trident https://raw.githubusercontent.com/sgryczan/TridentInstaller/dev/chart
+$ helm repo add trident https://raw.githubusercontent.com/sgryczan/TridentInstaller/master/chart
 "trident" has been added to your repositories
 ```
 
