@@ -1,0 +1,19 @@
+# Default values for trident-installer.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+trident_username: solidfire
+trident_password: solidfire
+tenant_name: k8s_trident
+svip: 10.0.0.1
+mvip: 10.0.0.2
+backend_name: solidfire
+storage_driver_name: solidfire-san
+use_chap: true
+
+image:
+  repository: sgryczan/trident-installer
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
