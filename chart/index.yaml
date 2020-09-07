@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  trident-installer:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2020-09-07T12:33:54.9288964-06:00"
+    description: A Helm chart for Kubernetes
+    digest: 408d87277e5d2b40da5b3dbe900dddff50048dc9ee2771ae3e943e18d731cc17
+    name: trident-installer
+    type: application
+    urls:
+    - trident-installer-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-09-07T12:33:54.9280457-06:00"
