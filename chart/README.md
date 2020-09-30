@@ -1,12 +1,16 @@
-## Add the Repository:
-```
-$ helm repo add trident https://raw.githubusercontent.com/sgryczan/TridentInstaller/master/chart
+# The Trident Helm Chart
+
+## Add the Repository
+
+```bash
+$ helm repo add trident https://raw.githubusercontent.com/netapp/TridentInstaller/master/chart
 "trident" has been added to your repositories
 ```
 
-## Install the chart:
-```
-$ helm install trident trident/trident-installer -n trident
+## Install the chart
+
+```bash
+$ helm install trident hulquest/trident-installer -n trident
 NAME: trident
 LAST DEPLOYED: Mon Sep  7 12:39:21 2020
 NAMESPACE: trident
