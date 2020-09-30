@@ -12,7 +12,7 @@ storage_driver_name: solidfire-san
 use_chap: true
 
 image:
-  repository: netapp/trident-installer
+  repository: hulquest/trident-installer
   pullPolicy: IfNotPresent
 
 nameOverride: ""

@@ -17,7 +17,7 @@ spec:
       serviceAccountName: trident-installer
       containers:
         - name: trident-installer
-          image: netapp/trident-installer:0.0.1
+          image: hulquest/trident-installer:0.0.1
           imagePullPolicy: "Always"
           volumeMounts:
           - mountPath: /tmp/ansible-operator/runner

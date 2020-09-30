@@ -16,7 +16,7 @@ jobs:
       - name: Build and Publish
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: netapp/trident-installer
+          name: hulquest/trident-installer
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           registry: docker.io
