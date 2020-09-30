@@ -1,5 +1,5 @@
 VERSION=0.0.1
-IMAGE_NAME=netapp/trident-installer
+IMAGE_NAME=hulquest/trident-installer
 
 .PHONY: build
 build:
