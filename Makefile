@@ -1,5 +1,5 @@
 VERSION=0.0.1
-IMAGE_NAME=hulquest/ez-rancher-trident-installer
+IMAGE_NAME=netapp/ez-rancher-trident-installer
 
 .PHONY: build
 build:
