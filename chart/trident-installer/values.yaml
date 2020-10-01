@@ -12,7 +12,7 @@ storage_driver_name: solidfire-san
 use_chap: true
 
 image:
-  repository: sgryczan/trident-installer
+  repository: netapp/ez-rancher-trident-installer
   pullPolicy: IfNotPresent
 
 nameOverride: ""

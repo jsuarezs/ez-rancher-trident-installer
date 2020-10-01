@@ -17,8 +17,7 @@ spec:
       serviceAccountName: trident-installer
       containers:
         - name: trident-installer
-          # Replace this with the built image name
-          image: sgryczan/trident-installer:0.0.1
+          image: netapp/ez-rancher-trident-installer:0.0.1
           imagePullPolicy: "Always"
           volumeMounts:
           - mountPath: /tmp/ansible-operator/runner
