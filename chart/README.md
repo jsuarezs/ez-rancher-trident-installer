@@ -10,7 +10,7 @@ $ helm repo add trident https://raw.githubusercontent.com/netapp/netapp/ez-ranch
 ## Install the chart
 
 ```bash
-$ helm install trident hulquest/trident-installer -n trident
+$ helm install trident netapp/ez-rancher-trident-installer -n trident
 NAME: trident
 LAST DEPLOYED: Mon Sep  7 12:39:21 2020
 NAMESPACE: trident
