@@ -3,13 +3,13 @@ entries:
   trident-installer:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2020-10-06T16:25:27.659117-06:00"
+    created: "2020-10-22T08:57:56.644367-06:00"
     description: Operator to install NetApp/Trident
-    digest: 7db8bde90826d213ae038068d34783c0cd57e80ecec9cd8bb5ca06ce3f5dcb07
+    digest: 9f63fb4e8c8531c425450c3f73d80536a2cdf021c31a360323db4fb51eb88fda
     icon: file://logo.png
     name: trident-installer
     type: application
     urls:
     - trident-installer-0.1.3.tgz
     version: 0.1.3
-generated: "2020-10-06T16:25:27.65778-06:00"
+generated: "2020-10-22T08:57:56.643439-06:00"

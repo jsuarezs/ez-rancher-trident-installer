@@ -17,7 +17,7 @@ questions:
   group: "Credential"
 - variable: tenant_name
   default: "trident"
-  description: "The name of the tenet that is already present on the SolidFire AFA."
+  description: "The name of the tenant that is already present on the SolidFire AFA."
   type: string
   required: true
   label: Storage Tenant
@@ -41,15 +41,12 @@ questions:
   description: "The name of this Trident backend configuration."
   type: string
   required: true
-  label: Storage tenant
+  label: Trident Backend Name
   group: "StroageConfiguration"
 - variable: storage_driver_name
   default: "solidfire-san "
   description: "The name of the Trident storage driver."
   type: string
   required: true
-  label: Storage tenant
+  label: Trident Stroage Driver
   group: "StroageConfiguration"
-
-
-
