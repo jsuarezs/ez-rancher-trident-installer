@@ -1,6 +1,6 @@
 # What is this?
 
-This is an ansible operator that will install trident-20.04.0 into a K8S cluster.
+This is an ansible operator that will install trident-20.10.0 into a K8S cluster.
 
 # Quick start
 
