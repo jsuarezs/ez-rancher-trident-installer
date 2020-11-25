@@ -1,7 +1,6 @@
 # Detailed Descriptions for the Trident App
 
-Requires kubernetes minimum version v1.11.0 and maximum v1.19.0.
-The trident-install operator is namespace-scoped to the 'trident' namespace.
+The trident-installer operator is namespace-scoped to the 'trident' namespace.
 
 ## Detailed Documentation
 

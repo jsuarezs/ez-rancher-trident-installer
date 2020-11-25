@@ -1,7 +1,13 @@
-apiVersion: v2
+apiVersion: v1
 name: trident-installer
 description: Operator to install NetApp/Trident
 icon: file://logo.png
+kubeVersion: ">= 1.11.0 <= 1.19.0"
+keywords:
+  - trident
+  - storage
+  - block
+  - iscsi
 
 # A chart can be either an 'application' or a 'library' chart.
 #

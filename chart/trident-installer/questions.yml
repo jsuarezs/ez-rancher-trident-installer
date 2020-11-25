@@ -1,5 +1,5 @@
 categories:
-  - storage
+- storage
 namespace: trident
 questions:
 - variable: trident_username
