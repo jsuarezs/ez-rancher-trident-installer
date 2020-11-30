@@ -45,7 +45,7 @@ questions:
   label: Trident Backend Name
   group: "StorageConfiguration"
 - variable: storage_driver_name
-  default: "solidfire-san "
+  default: "solidfire-san"
   description: "The name of the Trident storage driver."
   type: string
   required: true
