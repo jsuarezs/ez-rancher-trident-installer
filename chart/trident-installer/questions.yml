@@ -1,52 +1,53 @@
 categories:
-    - Storage
+- storage
+namespace: trident
 questions:
 - variable: trident_username
-  default: "netapp"
+  default: ""
   description: "Username for the SolidFire AFA user."
   type: string
   required: true
   label: Storage User Name
   group: "Credential"
 - variable: trident_password
-  default: "netapp"
+  default: ""
   description: "Password for the SolidFire AFA user."
   type: password
   required: true
   label: Storage Password
   group: "Credential"
 - variable: tenant_name
-  default: "trident"
+  default: "NetApp-HCI"
   description: "The name of the tenant that is already present on the SolidFire AFA."
   type: string
   required: true
   label: Storage Tenant
-  group: "StroageConfiguration"
+  group: "StorageConfiguration"
 - variable: svip
   default: "10.0.2.1"
   description: "The virtual/cluster IP address for data (I/O)."
   type: string
   required: true
   label: SVIP
-  group: "StroageConfiguration"
+  group: "StorageConfiguration"
 - variable: mvip
   default: "10.0.1.1"
   description: "The virtual/cluster IP address for management."
   type: string
   required: true
   label: MVIP
-  group: "StroageConfiguration"
+  group: "StorageConfiguration"
 - variable: backend_name  
   default: "solidfire"
   description: "The name of this Trident backend configuration."
   type: string
   required: true
   label: Trident Backend Name
-  group: "StroageConfiguration"
+  group: "StorageConfiguration"
 - variable: storage_driver_name
-  default: "solidfire-san "
+  default: "solidfire-san"
   description: "The name of the Trident storage driver."
   type: string
   required: true
   label: Trident Stroage Driver
-  group: "StroageConfiguration"
+  group: "StorageConfiguration"

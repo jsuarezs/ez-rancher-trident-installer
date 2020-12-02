@@ -1,7 +1,7 @@
 FROM quay.io/operator-framework/ansible-operator:v0.18.1
 
 ENV KUBECTL_VERSION=v1.18.3
-ENV TRIDENTCTL_VERSION=20.04.0
+ENV TRIDENTCTL_VERSION=20.10.0
 
 USER root
 

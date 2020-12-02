@@ -3,7 +3,7 @@
 ## Add the Repository
 
 ```bash
-$ helm repo add trident https://raw.githubusercontent.com/hulquest/TridentInstaller/master/chart
+$ helm repo add trident https://raw.githubusercontent.com/NetApp/ez-rancher-trident-installer/master/chart
 "trident" has been added to your repositories
 ```
 
