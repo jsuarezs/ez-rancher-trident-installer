@@ -1,6 +1,6 @@
 # What is this?
 
-This is an ansible operator that will install trident-20.10.0 into a K8S cluster.
+This is an ansible operator that will install trident-20.10.0 into a K8S cluster.  NetApp does not support this product but will give a best effort to respond to issues and pull requests.
 
 # Quick start
 
